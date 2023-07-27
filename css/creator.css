@@ -1,0 +1,184 @@
+
+.banner {
+    text-align: center;
+    width: 100%;
+    height: 560px;
+    background: url('../Images/Creator/bg.webp');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 10px 2px black;
+}
+
+.footer {
+    width: 100%;
+    height: 400px;
+    background: url('../Images/Creator/footer.webp');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 40px;
+    color: #0078f2;
+}
+
+.profile {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 400px;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px black;
+    overflow: hidden;
+}
+.profile .img {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 40%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background: url('../Images/Creator/phoom.webp');
+    background-size: cover;
+    background-position: top;
+    transition: 0.2s;
+}
+.profile .img:hover {
+    transform: scale(1.4,1.4);
+}
+.profile .data h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+.profile .data h1 {
+    font-size: 50px;
+    color: orange;
+}
+.profile .data {
+    color: white;
+    position: relative;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 60%;
+    background: url('../Images/Creator/2.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.profile .data .bg {
+    position: absolute;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: red;
+    background: black;
+    opacity: 0.8;
+}
+.profile .data .detail {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile .detail h3 {
+    margin: 10px;
+}
+
+.profile-teacher {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 400px;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px black;
+    overflow: hidden;
+}
+.profile-teacher .img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 40%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background: url('../Images/Creator/teacher.webp');
+    background-size: cover;
+    background-position: top;
+    transition: 0.2s;
+}
+.profile-teacher .img:hover {
+    transform: scale(1.4,1.4);
+}
+.profile-teacher .data h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+.profile-teacher  h1 {
+    font-size: 50px;
+    color: orange;
+}
+.profile-teacher .data {
+    color: white;
+    position: relative;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 60%;
+    background: url('../Images/Creator/1.webp');
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.profile-teacher .data .bg {
+    position: absolute;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: red;
+    background: black;
+    opacity: 0.8;
+}
+.profile-teacher .data .detail {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-teacher .detail h3 {
+    margin: 10px;
+}
+@media screen and (max-width: 580px) {
+    .data h1 {
+        font-size: 30px;
+    }
+    .profile .data h1 {
+        font-size: 30px;
+    }
+}

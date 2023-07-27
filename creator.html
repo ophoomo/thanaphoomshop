@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thanaphoom Shop</title>
+        <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/creator.css">
+        <link rel="stylesheet" href="icon/css/all.min.css">
+    </head>
+<body>
+
+    <header id="navbar" class="active">
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li class="dropdown">
+                    แนวเกม
+                    <ul>
+                        <li><a href="categorys/action.html"><i class="fa fa-fighter-jet"></i> แอ็คชัน</a></li>
+                        <li><a href="categorys/strategy.html"><i class="fa fa-chess-knight"></i> กลยุทธ์</a></li>
+                        <li><a href="categorys/survival.html"><i class="fa fa-hiking"></i> เอาชีวิตรอด</a></li>
+                        <li><a href="categorys/adventure.html"><i class="fa fa-walking"></i> ผจญภัย</a></li>
+                        <li><a href="categorys/indie.html"><i class="fa fa-cat"></i> อินดี้</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
+                <li><a href="creator.html">จัดทำโดย</a></li>
+            </ul>
+            <div class="right">
+                <a class="carts" href="carts.html"><i class="fa fa-shopping-cart"><span id="count">0</span></i></a>
+                <a class="bars" onclick="toggle()"><i class="fa fa-bars"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img style="margin-top:100px;" width="150px" src="Images/Creator/kmutnb.webp" alt="No Image">
+        <img style="margin-top: 10px;" src="Images/Creator/fitm.webp" alt="No Image">
+    </div>
+
+    <div class="container">
+        <h1 class="text-center heading"><i class="fas fa-chalkboard-teacher"></i> อาจารย์ผู้สอน</h1>
+        <div class="profile-teacher">
+            <div class="img"></div>
+            <div class="data">
+                <h2>ท่านอาจารย์</h2>
+                <h1>นิติการ นาคเจือทอง</h1>
+                <h2>Fundamental of Information Technology</h2>
+                <div class="detail">
+                    <h3>เจอกันทุกวัน อังคาร</h3>
+                    <h3>เวลา 8.00 น. ถึง 12.00 น.</h3>
+                </div>
+                <div class="bg"></div>
+            </div>
+        </div>
+        <h1 class="text-center heading"><i class="fas fa-graduation-cap"></i> จัดทำโดย</h1>
+        <div class="profile">
+            <div class="data">
+                <h1>ธนภูมิ อุ่นจิตร</h1>
+                <h2>เทคโนโลยีสารสนเทศ</h2>
+                <div class="detail">
+                    <h3>Sec B</h3>
+                    <h3>เลขที่ 17</h3>
+                    <h3>รหัสนักศึกษา 6306021621073</h3>
+                </div>
+                <div class="bg"></div>
+            </div>
+            <div class="img"></div>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+</body>
+<script src="js/navbar.js"></script>
+<script src="js/cart.js"></script>
+<script>
+    window.onload = () => {
+        if (!isNaN(get_count())) {
+            document.getElementById('count').innerText = get_count();
+        }
+    }
+</script>
+</html>

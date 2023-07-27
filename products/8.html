@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanaphoom Shop</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../icon/css/all.min.css">
+    <link rel="shortcut icon" href="../Images/favicon.ico" type="image/x-icon">
+
+</head>
+<style>
+    html, body {
+        background: #7e0000;
+    }
+</style>
+<body>
+
+    <header id="navbar">
+        <nav>
+            <ul id="menu">
+                <li><a href="../index.html">หน้าแรก</a></li>
+                <li class="dropdown">
+                    แนวเกม
+                    <ul>
+                        <li><a href="../categorys/action.html"><i class="fa fa-fighter-jet"></i> แอ็คชัน</a></li>
+                        <li><a href="../categorys/strategy.html"><i class="fa fa-chess-knight"></i> กลยุทธ์</a></li>
+                        <li><a href="../categorys/survival.html"><i class="fa fa-hiking"></i> เอาชีวิตรอด</a></li>
+                        <li><a href="../categorys/adventure.html"><i class="fa fa-walking"></i> ผจญภัย</a></li>
+                        <li><a href="../categorys/indie.html"><i class="fa fa-cat"></i> อินดี้</a></li>
+                    </ul>
+                </li>
+                <li><a href="../products.html">สินค้าทั้งหมด</a></li>
+                <li><a href="../creator.html">จัดทำโดย</a></li>
+            </ul>
+            <div class="right">
+                <a class="carts" href="../carts.html"><i class="fa fa-shopping-cart"><span id="count">0</span></i></a>
+                <a class="bars" onclick="toggle()"><i class="fa fa-bars"></i></a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="banner" style="justify-content: start;">
+        <div class="video">
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/_WecFdlQXug" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="overlay"></div>
+        <img src="../Images/Game/8/bg.webp" alt="No Image">
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <img src="../Images/Game/8/logo.webp" width="350px" alt="No Image">
+            </div>
+            <div class="detail">
+                <h1 style="width: 100%;" id="name" class="text-center"></h1>
+                <h3 class="text-center" style="margin: 10px;" id="platform">
+                    แพลตฟอร์ม
+                    <br>
+                </h3>
+                <h3 class="text-center" style="margin: 10px;">
+                    ผู้พัฒนา
+                    <br>
+                    <b id="creator"></b>
+                </h3>
+                <h3 class="text-center" style="margin: 10px;">
+                     วันวางจำหน่าย
+                    <br>
+                    <b id="distributor"></b>
+                </h3>
+            </div>
+            <div class="buy">
+                <h1 id="price"></h1>
+                <button onclick="buy()">หยิบใส่รถเข็น</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/navbar.js"></script>
+<script src="../js/scroll.js"></script>
+<script src="../js/cart.js"></script>
+<script>
+    const id = 8;
+    const name = "Rust";
+    const price = 469.00;
+    const creator = "Facepunch Studios";
+    const distributor = "9 ก.ย. 2561";
+    const platform = ['windows','apple'];
+    window.onload = () => {
+        setData();
+        cart_count();
+    }
+
+
+    const setData = () => {
+        document.getElementById('name').innerText = name;
+        document.getElementById('price').innerText =  '฿' + price.toFixed(2);
+        document.getElementById('creator').innerText =  creator;
+        document.getElementById('distributor').innerText =  distributor;
+        platform.map((item) => {
+            document.getElementById('platform').innerHTML +=  `<i class="fab fa-${item}"></i>`;
+        });
+    }
+
+    const cart_count = () => {
+        if (!isNaN(get_count())) {
+            document.getElementById('count').innerText = get_count();
+        }
+    }
+
+    const buy = async () => {
+        await add(id, name, 1, price, 0);
+        cart_count()
+    }
+
+</script>
+</html>

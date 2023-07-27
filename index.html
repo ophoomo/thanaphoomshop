@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanaphoom Shop</title>
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="icon/css/all.min.css">
+
+</head>
+<body>
+
+    <header id="navbar">
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li class="dropdown">
+                    แนวเกม
+                    <ul>
+                        <li><a href="categorys/action.html"><i class="fa fa-fighter-jet"></i> แอ็คชัน</a></li>
+                        <li><a href="categorys/strategy.html"><i class="fa fa-chess-knight"></i> กลยุทธ์</a></li>
+                        <li><a href="categorys/survival.html"><i class="fa fa-hiking"></i> เอาชีวิตรอด</a></li>
+                        <li><a href="categorys/adventure.html"><i class="fa fa-walking"></i> ผจญภัย</a></li>
+                        <li><a href="categorys/indie.html"><i class="fa fa-cat"></i> อินดี้</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
+                <li><a href="creator.html">จัดทำโดย</a></li>
+            </ul>
+            <div class="right">
+                <a class="carts" href="carts.html"><i class="fa fa-shopping-cart"><span id="count">0</span></i></a>
+                <a class="bars" onclick="toggle()"><i class="fa fa-bars"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center;">
+            <div class="img-banner"></div>
+            <div class="banner-content">
+                <h1>มหกรรมเกม</h1>
+                <p>เฉลิมฉลองสุดยอดเกมใกล้วางจำหน่าย ด้วยเดโมและกิจกรรมสดของผู้พัฒนา</p>
+                <a href="products.html">ดูรายละเอียด</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="title">
+            <h1><i class="fa fa-fire"></i> สินค้าใหม่</h1>
+            <a href="products.html">ดูเพิ่มเติม</a>
+        </div>
+        <div class="row">
+            <a href="products/4.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h4>-25%</h4>
+                    <h2>Total War Three Kingdoms</h2>
+                </div>
+                <img src="Images/Game/4/cover.webp" alt="No Image">
+            </div>
+            </a>
+            <a href="products/1.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h2>Stardew Valley</h2>
+                </div>
+                <img src="Images/Game/1/cover.webp" alt="No Image">
+            </div>
+            </a>
+            <a href="products/2.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h4>-50%</h4>
+                    <h2>Cyberpunk 2077</h2>
+                </div>
+                <img src="Images/Game/2/cover.webp" alt="No Image">
+            </div>
+            </a>
+            <a href="products/5.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h2>Sid Meier’s Civilization® VI</h2>
+                </div>
+                <img src="Images/Game/5/cover.webp" alt="No Image">
+            </div>
+            </a>
+        </div>
+
+        <div class="promote">
+            <div class="overlay"></div>
+            <img class="bg" src="Images/Promote/StardewValley/bg.webp" style="object-position: bottom;" alt="No Image">
+            <div class="content">
+                <div class="text">
+                    <img class="logo" src="Images/Promote/StardewValley/logo.webp" alt="">
+                    <h1>Stardew Valley</h1>
+                    <p>เกมแนวปลูกผัก RPG ที่ต้องใช้ชิวิตในชนบท</p>
+                    <a href="products/1.html">ดูรายละเอียด</a>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/7IDfb0kU4ws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="title">
+            <h1><i class="fa fa-gamepad"></i> สินค้ายอดนิยม</h1>
+            <a href="products.html">ดูเพิ่มเติม</a>
+        </div>
+        <div class="row">
+            <a href="products/7.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h4>-13%</h4>
+                    <h2>Grand Theft Auto V</h2>
+                </div>
+                <img src="Images/Game/7/cover.webp" alt="No Image">
+            </div>
+            <a href="products/10.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h4>-34%</h4>
+                    <h2>Monster Hunter: World</h2>
+                </div>
+                <img src="Images/Game/10/cover.webp" alt="No Image">
+            </div>
+            </a>
+            <a href="products/12.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h2>Tom Clancy's Rainbow Six® Siege</h2>
+                </div>
+                <img src="Images/Game/12/cover.webp" alt="No Image">
+            </div>
+            </a>
+            <a href="products/6.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    <h2>PLAYERUNKNOWN'S BATTLEGROUNDS</h2>
+                </div>
+                <img src="Images/Game/6/cover.webp" alt="No Image">
+            </div>
+            </a>
+        </div>
+
+        <div class="promote">
+            <div class="overlay"></div>
+            <img class="bg" src="Images/Promote/Cyberpunk2077/bg.webp" style="object-position: center; transform: scaleX(-1);" alt="No Image">
+            <div class="content">
+                <div class="video">
+                    <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/LembwKDo1Dk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="text">
+                    <img class="logo" src="Images/Promote/Cyberpunk2077/logo.webp" alt="">
+                    <h1>Cyberpunk 2077</h1>
+                    <p>เกมแนวแอ็คชันผจญภัยแบบโลกเปิดที่มีเนื้อเรื่องอยู่ในเมืองไนท์ซิตี้
+มหานครที่เต็มไปด้วยอำนาจ เสน่ห์ และการดัดแปลงร่างกาย</p>
+                    <a href="products/2.html">ดูรายละเอียด</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>
+                <i class="fa fa-envelope"></i>
+                thanapuomaunchit@gmail.com
+            </h3>
+        </div>
+        <div>
+            <h3>
+                <i class="fa fa-phone-alt"></i>
+                081-292-3539 หรือ 911
+            </h3>
+        </div>
+        <div>
+            <h3>
+                <i class="fa fa-map-marker-alt"></i>
+                191 หมู่ 1 ต.ซับสนุ่น อ.มวกเหล็ก จ.สระบุรี 18220
+            </h3>
+        </div>
+        <div>
+            <a target="_blank" href="https://www.facebook.com/PhoomZoZa/">
+                <i style="color: #3b5998;" class="fab fa-facebook-square"></i>
+            </a>
+            <a target="_blank" href="http://line.me/ti/p/phoomzoza">
+                <i style="color: #00B900" class="fab fa-line"></i>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="js/navbar.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/cart.js"></script>
+<script>
+    window.onload = () => {
+        if (!isNaN(get_count())) {
+            document.getElementById('count').innerText = get_count();
+        }
+    }
+
+</script>
+</html>

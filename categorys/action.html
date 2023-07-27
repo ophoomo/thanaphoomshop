@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanaphoom Shop</title>
+    <link rel="shortcut icon" href="../Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/banner.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../icon/css/all.min.css">
+</head>
+<style>
+    .title {
+        color: #0078f2;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .title a {
+        text-align: center;
+        white-space: nowrap;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 10px 50px;
+        font-size: 20px;
+        color: #0078f2;
+        text-decoration: none;
+        transition: 0.2s ease-out;
+    }
+    .title a:hover {
+        color: white;
+        background: #0078f2;
+    }
+    @media screen and (max-width: 784px) {
+        .title h1 {
+            width: 100%;
+            text-align: center;
+        }
+        .title {
+            justify-content: center;
+        }
+        .title a{
+            display: block;
+        }
+    }
+</style>
+<body>
+
+    <header id="navbar">
+        <nav>
+            <ul id="menu">
+                <li><a href="../index.html">หน้าแรก</a></li>
+                <li class="dropdown">
+                    แนวเกม
+                    <ul>
+                        <li><a href="../categorys/action.html"><i class="fa fa-fighter-jet"></i> แอ็คชัน</a></li>
+                        <li><a href="../categorys/strategy.html"><i class="fa fa-chess-knight"></i> กลยุทธ์</a></li>
+                        <li><a href="../categorys/survival.html"><i class="fa fa-hiking"></i> เอาชีวิตรอด</a></li>
+                        <li><a href="../categorys/adventure.html"><i class="fa fa-walking"></i> ผจญภัย</a></li>
+                    </ul>
+                </li>
+                <li><a href="../products.html">สินค้าทั้งหมด</a></li>
+                <li><a href="../creator.html">จัดทำโดย</a></li>
+            </ul>
+            <div class="right">
+                <a class="carts" href="../carts.html"><i class="fa fa-shopping-cart"><span id="count">0</span></i></a>
+                <a class="bars" onclick="toggle()"><i class="fa fa-bars"></i></a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="banner">
+        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center;">
+            <div class="img-banner"></div>
+            <div class="banner-content">
+                <h1>มหกรรมเกม</h1>
+                <p>เฉลิมฉลองสุดยอดเกมใกล้วางจำหน่าย ด้วยเดโมและกิจกรรมสดของผู้พัฒนา</p>
+                <a href="../products.html">ดูรายละเอียด</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+        <div class="title">
+            <h1><i class="fa fa-fighter-jet"></i> แอ็คชัน</h1>
+            <div>
+                <a style="background: #0078f2; color: white;" href="../categorys/action.html"><i class="fa fa-fighter-jet"></i> แอ็คชัน</a>
+                <a href="../categorys/strategy.html"><i class="fa fa-chess-knight"></i> กลยุทธ์</a>
+                <a href="../categorys/survival.html"><i class="fa fa-hiking"></i> เอาชีวิตรอด</a>
+                <a href="../categorys/adventure.html"><i class="fa fa-walking"></i> ผจญภัย</a>
+            </div>
+        </div>
+        <div id="product" class="row"></div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>
+                <i class="fa fa-envelope"></i>
+                thanapuomaunchit@gmail.com
+            </h3>
+        </div>
+        <div>
+            <h3>
+                <i class="fa fa-phone-alt"></i>
+                081-292-3539 หรือ 911
+            </h3>
+        </div>
+        <div>
+            <h3>
+                <i class="fa fa-map-marker-alt"></i>
+                191 หมู่ 1 ต.ซับสนุ่น อ.มวกเหล็ก จ.สระบุรี 18220
+            </h3>
+        </div>
+        <div>
+            <a target="_blank" href="https://www.facebook.com/PhoomZoZa/">
+                <i style="color: #3b5998;" class="fab fa-facebook-square"></i>
+            </a>
+            <a target="_blank" href="http://line.me/ti/p/phoomzoza">
+                <i style="color: #00B900" class="fab fa-line"></i>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="../js/navbar.js"></script>
+<script src="../js/scroll.js"></script>
+<script src="../js/cart.js"></script>
+<script>
+    const product = [
+        [2, 'Cyberpunk 2077', 50],
+        [6, "PLAYERUNKNOWN'S BATTLEGROUNDS", 0],
+        [12, "Tom Clancy's Rainbow Six® Siege", 0],
+    ];
+    window.onload = () => {
+        product.map((item) => {
+            document.getElementById('product').innerHTML += 
+            `
+            <a href="products/${item[0]}.html">
+            <div class="card">
+                <div class="overlay"></div>
+                <div class="text">
+                    ${item[2] > 0 ? `<h4>-${item[2]}%</h4>` : ''}
+                    <h2>${item[1]}</h2>
+                </div>
+                <img src="../Images/Game/${item[0]}/cover.webp" alt="No Image">
+            </div>
+            </a>
+            `;
+        });
+
+        if (!isNaN(get_count())) {
+            document.getElementById('count').innerText = get_count();
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanaphoom Shop</title>
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<style>
+    .container {
+        width: 910px !important;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    .detail {
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo h3 {
+        margin: 0;
+        padding: 0;
+    }
+    .logo p {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>ใบสั่งซื้อสินค้า</h1>
+        </header>
+        <div class="detail">
+            <div class="logo">
+                <h3>บริษัท ธนภูมิ ช้อป</h3>
+                <p>191 หมู่ 1 ต.ซับสนุ่น อ.มวกเหล็ก จ.สระบุรี 18220</p>
+            </div>
+            <div>
+                <p>วันที่สั่งซื้อ: <b id="date"></b></p>
+            </div>
+        </div>
+        <table id="data" style="margin-top: 15px;" border="1px" width="100%" cellpadding="5" cellspacing="0">
+            <tr>
+                <th width="8%">ลำดับ</th>
+                <th width="15%">รหัสสินค้า</th>
+                <th>ชื่อสินค้า</th>
+                <th width="8%">จำนวน</th>
+                <th width="15%">ราคา / หน่วย</th>
+                <th width="8%">ส่วนลด</th>
+                <th width="15%">จำนวนเงินรวม</th>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="js/cart.js"></script>
+<script>
+    window.onload = () => {
+        const date = new Date().toISOString().slice(0,10);
+        document.getElementById('date').innerText = date;
+        product();
+        window.print();
+    }
+
+    const product = () => {
+        const data = get_data();
+        let total = 0;
+        data.map((item, index) => {
+            total += item.qty*(item.price-(item.price*item.discount/100));
+            document.getElementById('data').innerHTML += `
+            <tr class='text-center'>
+                <td>${index+1}</td>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>${item.price.toFixed(2)}</td>
+                <td>${(item.price*item.discount/100).toFixed(2)}</td>
+                <td>${(item.price-(item.price*item.discount/100)).toFixed(2)}</td>
+            </tr>
+            `;
+        });
+        document.getElementById('data').innerHTML += `
+        <tr class='text-right'>
+            <th colspan='6'>รวมราคาสินค้า (บาท)</th>
+            <th>${total}</th>
+        </tr>
+        <tr class='text-right'>
+            <th colspan='6'>ค่าจัดส่ง (บาท)</th>
+            <th>0.00</th>
+        </tr>
+        <tr class='text-right'>
+            <th colspan='6'>ภาษี 7% (บาท)</th>
+            <th>${total*7/100}</th>
+        </tr>
+        <tr class='text-right'>
+            <th colspan='6'>ราคาสุทธิ (บาท)</th>
+            <th>${total+(total*7/100)}</th>
+        </tr>
+        `;
+    }
+</script>
+</html>
